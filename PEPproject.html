@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="PEPproject.css">
+</head>
+
+<body class="b">
+    <header>
+        <h1 style="font-family:Times New Roman, Times, serife;">BANK</h1>
+        <p style="font-family: Cursive"> Credit Card </p>
+    </header>
+        <section id="header">
+            <!-- <a href="#"><img src="C:\Users\LAKSHNASHREE\Desktop\project\images\Logotype Boutique Fashion Neon Logomark logo.png" class="img-fluid" alt=""></a>-->
+            <div> 
+                <ul id="navbar">
+                    <li><a >Home</a></li>
+                    <li><a >Login</a></li>
+                    <li><a >About Us</a></li>
+                    <li><a>Contact</a></li>
+                    
+                </ul>
+            </div>
+        </section>
+    <h1 style="text-align: center;margin-top: 100px;color: white;">CREDITCARD VALIDATION</h1>
+    <div style="text-align:center">
+        <div class="box">
+    <form id="registrationForm" >
+        <p><label for="number">Account Number:</label></p><br>
+        <input type="number" id="number" required><br>
+        <p><label for="num">Cvv:</label></p><br>
+        <input type="number" id="num" required><br>
+        <p><label for="name">Name:</label></p><br>
+        <input type="text" id="name" required><br>
+        <br>
+        <br>
+        <p><button type="submit">Validate</button></p>
+      </form></div>
+    </div>
+<script>
+    function validateForm(event) {
+  event.preventDefault(); 
+
+  
+  const number= document.getElementById("number");
+  const num = document.getElementById("num");
+  const name = document.getElementById("name");
+
+  const number1 = number.value;
+  const num1 = num.value;
+  const name1 = name.value;
+
+  if (number1 == '') {
+    alert('Please enter your name.');
+    return false;
+  }
+
+  if (num1 == '') {
+    alert('Please enter your cvv number.');
+    return false;
+  }
+
+  if (!isValidEmail(num1)) {
+    
+    return false;
+  }
+
+  if (name1 == '') {
+    alert('Please enter a name.');
+    return false;
+  }
+
+  alert('Form submitted successfully!');
+  document.getElementById('registrationForm').reset();
+}
+
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+</script>  
+<script>document.getElementById('registrationForm').addEventListener('submit', validateForm);
+</script>    
+</body>
+</html>

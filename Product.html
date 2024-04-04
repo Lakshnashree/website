@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ReVamp</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body></body>
+<section id="header">
+    <a href="#"><img src="images/Logotype Boutique Fashion Neon Logomark logo.png" class="img-fluid" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a href="project.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</section>
+<section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+        <img src="C:\Users\LAKSHNASHREE\640c191d9b2e31678514461.webp" width="15%" alt="" id="MainImg">
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="images/products/f2.jpg" width="30%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f1 .jpg" width="15%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f5.jpg" width="15%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f6.jpg" width="15%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="images/products/f3.jpg" width="15%" class="small-img" alt="">
+            </div>
+        </div>
+
+    </div>
+
+<form id="orderForm">
+    <div class="single-pro-details">
+        <h4>Hand Embroidered Kurti</h4>
+        <h2>Rs.2300</h2>
+    <label for="quantity">Quantity:</label>
+     <input type="number" id="quantity" name="quantity" min="1"><br>
+
+    <label for="size">Size:</label>
+    <select id="size" name="size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+    </select>
+  <input type="submit" value="Submit">
+</form>
+<h4>Product Details</h4>
+<span class="st">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit rem quaerat modi voluptatum dolorem soluta totam, in assumenda consequuntur iusto quod debitis, ipsa blanditiis eum fuga sed distinctio consectetur.
+</span>
+<section id="product1" class="section-p1">
+    <h2>Featured Products</h2>
+    <div class="pro-container">
+        <div class="pro">
+            <img src="C:\Users\LAKSHNASHREE\kurti-with-jeans-853x1024.jpg">
+            <div class="des">
+               <h5>Pink Blue Kurti</h5>
+               <h4>Rs.999</h4>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="C:\Users\LAKSHNASHREE\imagebg2.webp">
+            <div class="des">
+               <h5>Blue Pink Kurti</h5>
+               <h4>Rs.300</h4>
+            </div>
+        </div>
+        <div class="pro">
+            <img src="C:\Users\LAKSHNASHREE\sky-blue-chikan-work-georgette-kurti-177355.jpg" alt="">
+            <div class="des">
+               <h5>Sleeveless Kurti</h5>
+               <h4>Rs.300</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+        <h4 class="style">Sign up for Newsletters</h4>
+        <p class="style">Get Email updates about our new products and discounts!!</p>
+    </div>
+    <div class="form">
+        <input type="text" placeholder="Your Email address">
+        <button class="normal" onclick="window.location.href='login.html';">Sign Up</button>
+    </div>
+</section>
+<script>
+function validateQuantityAndSize(order) {
+  // Validate quantity: must be present, a number and more than zero
+  if (!order.quantity || typeof order.quantity !== 'number' || order.quantity <= 0 || !Number.isInteger(order.quantity)) {
+    alert('Invalid order: Missing or invalid quantity.');
+    return false;
+  }
+
+  // Validate size: must be present and one of "S", "M", "L", "XL"
+  if (!order.size || !['S', 'M', 'L', 'XL'].includes(order.size)) {
+    alert('Invalid order: Missing or invalid size.');
+    return false;
+  }
+
+  // If all validations pass, return true
+  return true;
+}
+
+// Usage
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  // Prevent the form from being submitted
+  e.preventDefault();
+
+  var order = {
+    quantity: parseInt(document.getElementById('quantity').value, 10),
+    size: document.getElementById('size').value
+  };
+
+  if (validateQuantityAndSize(order)) {
+    alert('Your order is placed successfully');
+    
+  } else {
+    alert('Order is invalid.');
+  }
+});
+</script>
+
+</body>
+</html>
+
